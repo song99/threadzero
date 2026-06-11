@@ -1,0 +1,17 @@
+# Environments
+.env
+.venv/
+env/
+__pycache__/
+
+# Angular & Node
+node_modules/
+dist/
+.angular/
+
+# Mac OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
