@@ -1,0 +1,14 @@
+<header class="main-navbar">
+  <div class="navbar-container">
+    <div class="brand-logo" [routerLink]="['/']">
+      <span class="thread-text">Thread</span><span class="zero-text">Zero</span>
+    </div>
+    <nav class="nav-menu">
+      <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+      <a routerLink="/gallery" routerLinkActive="active-link">Featured Campaigns</a>
+      <a routerLink="/creator" routerLinkActive="active-link">Create Campaign</a>
+    </nav>
+  </div>
+</header>

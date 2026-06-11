@@ -1,0 +1,161 @@
+
+/* --- 📦 โครงสร้างเลย์เอาต์หน้าสกรีนแดชบอร์ดครีเอเตอร์ --- */
+.dashboard-wrapper {
+  background-color: #fcf9f8; /* พื้นหลังสีหินอ่อนลดความล้าสายตาจากดีไซน์ระบบ */
+  min-height: calc(100vh - 80px);
+  padding: 40px 24px 80px 24px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.dashboard-header {
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+}
+
+.dashboard-header h2 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 28px;
+  color: #1b1c1c;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  font-family: 'Noto Sans', sans-serif;
+  color: #5d5f5e;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* แผงควบคุม Grid การ์ด Metrics ยอดระดมทุน */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px; /* เว้นระยะห่างตามค่ามาตราส่วน */
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+
+.metric-card {
+  background-color: #ffffff;
+  border-radius: 1rem; /* รัศมีความโค้งมนกล่องใหญ่ 16px */
+  padding: 24px;
+  border: 1px solid #e4e2e1;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.04); /* เงาฟุ้งผสมสีกรอบมรกตจาง */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ไฮไลท์โทนเลเยอร์กล่องสถิติสิ่งแวดล้อม Carbon Credits */
+.leaf-bg {
+  background-color: #f5fff7; /* แถบสีมรกตสว่าง 10% สะท้อนเรื่องความใส่ใจนิเวศน์ */
+  border: 1px solid #bccac0;
+}
+
+.metric-card .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; /* Label-SM */
+  font-weight: 600;
+  color: #5d5f5e;
+  margin-bottom: 12px;
+}
+
+.leaf-bg .label {
+  color: #006948;
+}
+
+.metric-card .value {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1b1c1c;
+  margin-bottom: 4px;
+}
+
+.leaf-bg .value {
+  color: #006948;
+}
+
+.metric-card .unit {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sub-desc {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 12px;
+  color: #3d4a42;
+  margin: 8px 0 0 0;
+}
+
+/* 🎯 ปรับแต่งซ่อมแซมแผงรายการกิจกรรมล่าสุด ขจัดปัญหาตัวหนังสือชิดซ้ายกองรวมกัน */
+.activity-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 32px;
+  border: 1px solid #e4e2e1;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.04);
+}
+
+.activity-section h3 {
+  font-family: 'Noto Sans', sans-serif;
+  color: #1b1c1c;
+  font-size: 20px;
+  margin: 0 0 24px 0;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* ระยะเว้นช่องไฟระหว่างแถว */
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: #f6f3f2; /* สีกรอบชั้นโทน layer รองรับวัตถุเนื้อผิวเรียบ */
+  border-radius: 0.5rem; /* ความมนขอบ 8px */
+  border: 1px solid #e4e2e1;
+  transition: background-color 0.2s ease;
+}
+
+.activity-item:hover {
+  background-color: #f0eded;
+}
+
+.item-icon-box {
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+  font-size: 16px;
+}
+
+.act-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.act-main-text {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1b1c1c;
+  margin: 0;
+}
+
+.act-time-lbl {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #5d5f5e;
+}

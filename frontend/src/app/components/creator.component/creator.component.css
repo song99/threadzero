@@ -1,0 +1,96 @@
+/* --- 🛠️ Navbar --- */
+.main-navbar { background-color: #ffffff; border-bottom: 1px solid #e4e2e1; box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.02); }
+.navbar-container { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+.brand-logo { font-family: 'Noto Sans', sans-serif; font-size: 22px; font-weight: 700; color: #006948; cursor: pointer; }
+.sub-brand { font-size: 14px; font-weight: 500; color: #5d5f5e; background: #e4e2e1; padding: 2px 8px; border-radius: 4px; margin-left: 4px; }
+.nav-menu a { font-family: 'Inter', sans-serif; margin: 0 16px; text-decoration: none; color: #1b1c1c; font-weight: 500; }
+.nav-menu a.active-link { color: #006948; border-bottom: 2px solid #006948; padding-bottom: 6px; }
+.btn-nav-action { background-color: #006948; color: white; border-radius: 0.5rem; padding: 8px 16px; font-weight: 600; border: none; cursor: pointer; }
+
+/* --- 📦 Layout --- */
+.creator-wrapper { background-color: #fcf9f8; min-height: calc(100vh - 80px); padding: 40px 24px; }
+.creator-container { max-width: 1200px; margin: 0 auto; }
+
+/* --- 🎯 Stepper --- */
+.stepper-bar { display: flex; justify-content: space-between; align-items: center; background-color: #ffffff; padding: 20px 40px; border-radius: 1rem; border: 1px solid #e4e2e1; margin-bottom: 32px; box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.03); }
+.step { font-family: 'Noto Sans', sans-serif; color: #5d5f5e; font-weight: 500; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; }
+.step.active { color: #006948; font-weight: 700; }
+.step-num { background-color: #e4e2e1; color: #1b1c1c; width: 28px; height: 28px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; font-family: 'Inter', sans-serif; font-size: 14px; transition: all 0.3s ease; }
+.step.active .step-num { background-color: #006948; color: white; }
+
+/* --- 🖼️ Cards & Inputs --- */
+.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.panel-card { background: #ffffff; border-radius: 1rem; padding: 32px; border: 1px solid #e4e2e1; box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.05); display: flex; flex-direction: column; }
+.panel-card h3 { font-family: 'Noto Sans', sans-serif; color: #1b1c1c; margin: 0 0 24px 0; font-size: 20px; }
+.highlight-border { border: 1px solid #bccac0; }
+
+.upload-box { border: 2px dashed #bccac0; border-radius: 0.5rem; height: 120px; display: flex; justify-content: center; align-items: center; cursor: pointer; background-color: #fdfcfb; margin-bottom: 24px; text-align: center; padding: 16px; }
+.upload-icon { font-size: 24px; display: block; margin-bottom: 8px; }
+.upload-placeholder p { font-size: 14px; color: #5d5f5e; margin: 0; }
+.upload-placeholder .highlight { color: #006948; font-weight: 600; }
+
+.input-group { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; width: 100%; }
+.form-control { width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #bccac0; border-radius: 0.5rem; padding: 14px 16px; font-family: 'Noto Sans', sans-serif; font-size: 15px; color: #1b1c1c; }
+.form-control:focus { border-color: #006948; outline: none; box-shadow: 0 0 0 2px rgba(0, 105, 72, 0.1); }
+.text-area-fix { height: 100px; resize: vertical; }
+.ai-textarea { height: 100px; }
+
+.dropdown-row { display: flex; gap: 16px; margin-bottom: 24px; width: 100%; }
+.form-select { flex: 1; background-color: #ffffff; border: 1px solid #bccac0; border-radius: 0.5rem; padding: 12px; font-family: 'Noto Sans', sans-serif; font-size: 14px; color: #1b1c1c; }
+
+/* --- 🔘 Buttons --- */
+.btn { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; padding: 14px; border-radius: 0.5rem; cursor: pointer; border: none; text-align: center; transition: all 0.2s ease; }
+.full-width { width: 100%; }
+.mt-16 { margin-top: 16px; }
+.btn-primary { background-color: #006948; color: white; }
+.btn-primary:hover { background-color: #00855d; }
+.btn-outline { background-color: transparent; border: 1px solid #006948; color: #006948; }
+.btn-outline:hover { background-color: #f5fff7; }
+.btn-secondary { background-color: #e4e2e1; color: #5d5f5e; cursor: not-allowed; }
+
+/* --- 🚀 Step 3 Launch Actions --- */
+.step-3-action { margin-top: 16px; animation: fadeIn 0.4s ease-out; }
+.launch-btn { font-size: 16px; padding: 16px; box-shadow: 0 8px 24px -4px rgba(0, 105, 72, 0.3); transform: translateY(0); }
+.launch-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -4px rgba(0, 105, 72, 0.4); }
+.mc-notice { text-align: center; font-size: 11px; color: #006948; margin-top: 12px; font-weight: 600; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 👕 T-Shirt Mockup Magic --- */
+.mockup-results { margin-top: 28px; border-top: 1px solid #e4e2e1; padding-top: 24px; animation: fadeIn 0.5s ease-out; }
+.section-label { font-size: 14px; font-weight: 600; color: #006948; margin: 0 0 16px 0; text-align: center; }
+
+.tshirt-composite {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.base-shirt {
+  width: 100%;
+  display: block;
+}
+
+.design-layer {
+  position: absolute;
+  top: 20%; /* 🔧 จุดปรับตำแหน่งแกน Y: ดันลายขึ้น/ลง (ค่าแนะนำ 25% - 30%) */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 35%; /* 🔧 จุดปรับความกว้าง: ความกว้างสุดของลายบนหน้าอก */
+  height: 45%; /* 🌟 จำกัดความสูง: ป้องกันไม่ให้ภาพ AI ทะลุลงไปถึงชายเสื้อ */
+  
+  /* 🌟 เวทมนตร์สำคัญ: บังคับให้ภาพคงสัดส่วนเดิมเสมอ และอยู่พอดีในกรอบ width/height ที่ตั้งไว้ */
+  object-fit: contain; 
+  object-position: top center; /* ให้ภาพเกาะติดขอบบนของกรอบหน้าอกเสมอ */
+  
+  mix-blend-mode: multiply; 
+  opacity: 0.9;
+}

@@ -1,0 +1,49 @@
+
+
+<div class="dashboard-wrapper">
+  <section class="dashboard-header">
+    <h2>Hello Pimchaya,</h2>
+    <p class="subtitle">Let's build sustainability together</p>
+  </section>
+
+  <div class="metrics-grid">
+    <div class="metric-card leaf-bg">
+      <span class="label">YOUR CARBON CREDITS</span>
+      <div class="value">{{ carbonCredits() }} <span class="unit">Credits</span></div>
+      <p class="sub-desc">✓ You have reduced overproduction by 120 items</p>
+    </div>
+
+    <div class="metric-card">
+      <span class="label">Total Raised</span>
+      <div class="value">฿{{ totalRaised() | number }}</div>
+    </div>
+
+    <div class="metric-card">
+      <span class="label">Total Backers</span>
+      <div class="value">{{ backers() }} Backers</div>
+    </div>
+
+    <div class="metric-card">
+      <span class="label">Successful Campaigns</span>
+      <div class="value">{{ activeCampaigns() }} Campaigns</div>
+    </div>
+  </div>
+
+  <section class="activity-section">
+    <h3>Recent Activities</h3>
+
+    <div class="activity-list">
+      @for (act of activities(); track act.text) {
+        <div class="activity-item">
+          <div class="item-icon-box">
+            <span class="status-badge-dot">🍃</span>
+          </div>
+          <div class="act-text-content">
+            <p class="act-main-text">{{ act.text }}</p>
+            <span class="act-time-lbl">⏳ {{ act.time }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</div>

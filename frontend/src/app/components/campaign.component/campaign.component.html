@@ -1,0 +1,125 @@
+
+
+<div class="detail-page-wrapper" *ngIf="campaignData()">
+  <main class="main-grid-container">
+    <div class="visuals-column">
+      <div class="main-display-card">
+        <img
+          [src]="campaignData().images[selectedImageIndex()]"
+          alt="Main Product Preview"
+          (error)="
+            $any($event.target).src =
+              'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80'
+          "
+        />
+        <span class="category-chip">🍃 Organic Cotton</span>
+      </div>
+
+      <div class="thumbnails-row">
+        @for (img of campaignData().images; track img; let idx = $index) {
+          <div
+            class="thumb-box"
+            [class.active]="selectedImageIndex() === idx"
+            (click)="selectedImageIndex.set(idx)"
+          >
+            <img
+              [src]="img"
+              alt="Product angle"
+              (error)="
+                $any($event.target).src =
+                  'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=150&q=80'
+              "
+            />
+          </div>
+        }
+        <div class="thumb-box ai-preview-btn">
+          <span class="ai-icon">👁️</span>
+          <span class="ai-lbl">AI Preview</span>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <h2>Campaign Story</h2>
+        <p class="story-p">{{ campaignData().story }}</p>
+
+        <div class="features-checklist">
+          <div class="check-item">
+            <span class="check-icon">🟩</span>
+            <span
+              ><strong>100% Organic Cotton:</strong> Soft, breathable, and skin-friendly.</span
+            >
+          </div>
+          <div class="check-item">
+            <span class="check-icon">🟩</span>
+            <span
+              ><strong>Non-toxic Dyes:</strong> Chemical-free dyeing process, safe for water sources.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="funding-column">
+      <div class="sticky-sidebar-card">
+        <div class="meta-tags">
+          <span class="tag-label">{{ campaignData().category }}</span>
+          <span class="tag-label">📍 {{ campaignData().location }}</span>
+        </div>
+
+        <h1>{{ campaignData().title }}</h1>
+        <p class="by-creator">
+          by <strong>{{ campaignData().creator }}</strong>
+        </p>
+
+        <div class="funding-status">
+          <div class="funding-numeric">
+            <span class="current-raised">฿{{ campaignData().raisedAmount | number }}</span>
+            <span class="goal-text">pledged of ฿{{ campaignData().targetAmount | number }} goal</span>
+          </div>
+
+          <div class="progress-track-bar">
+            <div
+              class="progress-fill-bar"
+              [style.width.%]="(campaignData().raisedAmount / campaignData().targetAmount) * 100"
+            ></div>
+          </div>
+        </div>
+
+        <div class="stats-metrics-grid">
+          <div class="metric-item">
+            <strong>75%</strong>
+            <p>funded</p>
+          </div>
+          <div class="metric-item">
+            <strong>{{ campaignData().backersCount }}</strong>
+            <p>backers</p>
+          </div>
+          <div class="metric-item">
+            <strong>{{ campaignData().daysLeft }}</strong>
+            <p>days to go</p>
+          </div>
+        </div>
+
+        <div class="price-tier">
+          <span class="label-p">Starting price</span>
+          <span class="value-p">฿{{ campaignData().pricePerUnit | number }}</span>
+        </div>
+
+        <button class="btn-pledge-action">Pre-order (Pledge Now) ➔</button>
+        <p class="guarantee-notice">⚠️ You will only be charged if the project is successfully funded.</p>
+      </div>
+
+      <div class="sustainability-impact-card">
+        <div class="impact-header">
+          <span class="leaf-icon">🌱</span>
+          <h3>Sustainability Impact</h3>
+        </div>
+        <h4>Earn {{ campaignData().carbonCredits }} Carbon Credits</h4>
+        <p>
+          Pre-ordering helps reduce waste from overproduction.
+        </p>
+        <span class="verified-tag">✓ Verified Eco-Campaign</span>
+      </div>
+    </div>
+  </main>
+</div>

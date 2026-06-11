@@ -1,0 +1,126 @@
+
+<div class="creator-wrapper">
+  <div class="creator-container">
+    <div class="stepper-bar">
+      <div class="step" [class.active]="currentStep() >= 1">
+        <span class="step-num">1</span> Step 1: Select Design
+      </div>
+      <div class="step" [class.active]="currentStep() >= 2">
+        <span class="step-num">2</span> Step 2: T-Shirt Mockup Preview
+      </div>
+      <div class="step" [class.active]="currentStep() >= 3">
+        <span class="step-num">3</span> Step 3: Launch Campaign
+      </div>
+    </div>
+
+    <div class="split-grid">
+      <div class="panel-card">
+        <h3>📝 Project Details</h3>
+        <div class="upload-box" (click)="fileInput.click()" *ngIf="currentStep() === 1">
+          <input
+            type="file"
+            #fileInput
+            (change)="onFileSelected($event)"
+            style="display: none"
+            accept="image/*"
+          />
+          <div class="upload-placeholder">
+            <span class="upload-icon">☁️</span>
+            <p>Drag your file here or <span class="highlight">click to upload</span></p>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="Project Name (e.g. Eco-Flow Edition)"
+            [value]="workTitle()"
+            (input)="workTitle.set($any($event.target).value)"
+            class="form-control"
+          />
+          <textarea
+            placeholder="Short description"
+            [value]="workDescription()"
+            (input)="workDescription.set($any($event.target).value)"
+            class="form-control text-area-fix"
+          ></textarea>
+        </div>
+
+        <button class="btn btn-secondary full-width mt-16" *ngIf="currentStep() < 3" disabled>
+          Please design and confirm on the right panel first.
+        </button>
+
+        <div class="step-3-action" *ngIf="currentStep() === 3">
+          <button class="btn btn-primary full-width launch-btn" (click)="submitCampaign()">
+            🚀 Launch Campaign (via MCP)
+          </button>
+          <p class="mc-notice">Data will be instantly sent to Agent 3 to save in MongoDB</p>
+        </div>
+      </div>
+
+      <div class="panel-card highlight-border">
+        <h3>✨ Let AI Design (Agent 1)</h3>
+        <div class="input-group">
+          <textarea
+            placeholder="Describe your idea... e.g. 'Wild elephant walking in bamboo forest at morning, minimalist style'"
+            [value]="aiPrompt()"
+            (input)="aiPrompt.set($any($event.target).value)"
+            class="form-control ai-textarea"
+          ></textarea>
+        </div>
+
+        <div class="dropdown-row">
+          <select
+            [value]="selectedStyle()"
+            (change)="selectedStyle.set($any($event.target).value)"
+            class="form-select"
+          >
+            <option value="minimalist">Art Style: Minimalist</option>
+          </select>
+          <select
+            [value]="selectedPalette()"
+            (change)="selectedPalette.set($any($event.target).value)"
+            class="form-select"
+          >
+            <option value="earth-tones">Color Palette: Earth-tones</option>
+          </select>
+        </div>
+
+        <button
+          class="btn btn-outline full-width"
+          (click)="generateWithAI()"
+          [disabled]="isLoading()"
+        >
+          {{ isLoading() ? '⚡ Agent is processing...' : 'Generate with AI' }}
+        </button>
+
+        <div class="mockup-results" *ngIf="currentStep() >= 2">
+          <p class="section-label">✅ Your design on mockup (T-Shirt Mockup)</p>
+          <div class="tshirt-composite">
+            <img
+              src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+              alt="Blank Shirt"
+              class="base-shirt"
+            />
+            <img
+              [src]="imagePreview()"
+              alt="AI Design"
+              class="design-layer"
+              (error)="
+                $any($event.target).src = 'https://cdn-icons-png.flaticon.com/512/2913/2913990.png'
+              "
+            />
+          </div>
+
+          <button
+            class="btn btn-outline full-width mt-16"
+            *ngIf="currentStep() === 2"
+            (click)="currentStep.set(3)"
+          >
+            Confirm this design (Proceed to step 3) ➔
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

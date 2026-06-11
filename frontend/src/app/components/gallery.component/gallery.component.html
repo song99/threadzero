@@ -1,0 +1,82 @@
+<div class="gallery-wrapper">
+  <section class="search-banner">
+    <h2>Explore Campaigns</h2>
+    <p class="search-sub">Turn creative ideas into reality. Support sustainable fashion.</p>
+    <div class="search-input-box">
+      <input
+        type="text"
+        placeholder="🔍 Search campaigns..."
+        [value]="searchQuery()"
+        (input)="searchQuery.set($any($event.target).value)"
+        class="form-search"
+      />
+    </div>
+  </section>
+
+  <main class="gallery-container">
+    <div class="gallery-grid">
+      @for (item of filteredCampaigns(); track item._id) {
+        <div class="campaign-card" [routerLink]="['/campaign', item._id]">
+          <div class="img-wrapper">
+            <img
+              [src]="item.image_url"
+              alt="Campaign Design"
+              (error)="
+                $any($event.target).src =
+                  'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80'
+              "
+            />
+            <span class="tag">🍃 Eco-Friendly</span>
+          </div>
+
+          <div class="card-content">
+            <div class="tag-row">
+              <span class="pill-tag">Organic Cotton</span>
+            </div>
+
+            <h3>{{ item.campaign_name }}</h3>
+            <p class="caption-text">{{ item.caption }}</p>
+
+            <div class="progress-box">
+              <div class="bar">
+                <div
+                  class="fill"
+                  [style.width.%]="
+                    ((item.pledge_raised || 45000) / (item.pledge_goal || 60000)) * 100
+                  "
+                ></div>
+              </div>
+              <div class="lbls">
+                <span class="fund-raised">฿{{ item.pledge_raised || 45000 | number }}</span>
+                <span class="fund-pct">75%</span>
+              </div>
+              <div
+                class="mt-2 inline-flex items-center gap-1 rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-700 shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                  />
+                </svg>
+                Carbon Credit: {{ item.carbon_credit_score || 125 }} CC
+              </div>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <div class="empty-layout">
+          <p>No campaigns found in the system at the moment.</p>
+        </div>
+      }
+    </div>
+  </main>
+</div>

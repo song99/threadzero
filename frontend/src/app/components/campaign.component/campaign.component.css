@@ -1,0 +1,298 @@
+/* --- 📦 โครงสร้างหน้าเว็บดีเทลแบบ Grid คอนเทนเนอร์ --- */
+.detail-page-wrapper {
+  background-color: #fcf9f8; /* สีกรอบกระดาษสโตน 100 */
+  min-height: calc(100vh - 80px);
+  padding: 40px 24px 80px 24px;
+  box-sizing: border-box;
+}
+
+.main-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* กางเลย์เอาต์แบ่งความกว้าง 2 ฝั่ง ซ้าย-ขวา */
+  gap: 32px;
+}
+
+/* 🖼️ การจัดการคอลลัมน์ฝั่งซ้าย (Visuals) */
+.visuals-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main-display-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e4e2e1;
+  padding: 16px;
+  height: 480px;
+  position: relative;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.04);
+}
+
+.main-display-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.category-chip {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 6px 14px;
+  border-radius: 0.25rem;
+  font-size: 12px;
+  font-weight: 600;
+  color: #006948;
+}
+
+.thumbnails-row {
+  display: flex;
+  gap: 12px;
+}
+
+.thumb-box {
+  width: 80px;
+  height: 80px;
+  background-color: #ffffff;
+  border: 1px solid #e4e2e1;
+  border-radius: 0.5rem;
+  padding: 4px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.thumb-box.active {
+  border-color: #006948;
+  border-width: 2px;
+}
+
+.ai-preview-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eae7e7;
+  border: 1px dashed #006948;
+}
+.ai-icon { font-size: 18px; }
+.ai-lbl { font-size: 10px; font-weight: 600; margin-top: 2px; color: #006948; }
+
+.story-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 32px;
+  border: 1px solid #e4e2e1;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.04);
+}
+
+.story-card h2 {
+  font-family: 'Noto Sans', sans-serif;
+  color: #1b1c1c;
+  margin: 0 0 16px 0;
+  font-size: 22px;
+}
+
+.story-p {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5d5f5e;
+  margin: 0 0 24px 0;
+}
+
+.features-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid #e4e2e1;
+  padding-top: 16px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #1b1c1c;
+}
+
+/* 📊 การจัดการคอลลัมน์ฝั่งขวา (Sidebar & Funding) */
+.funding-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sticky-sidebar-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 32px;
+  border: 1px solid #e4e2e1;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.04);
+}
+
+.meta-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  background-color: #e4e2e1;
+  color: #454747;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.sticky-sidebar-card h1 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 28px;
+  color: #1b1c1c;
+  margin: 0 0 4px 0;
+}
+
+.by-creator {
+  font-size: 14px;
+  color: #5d5f5e;
+  margin: 0 0 28px 0;
+}
+
+.funding-status {
+  margin-bottom: 24px;
+}
+
+.funding-numeric {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.current-raised {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #006948;
+}
+
+.goal-text {
+  font-size: 13px;
+  color: #5d5f5e;
+}
+
+.progress-track-bar {
+  background-color: #e4e2e1;
+  height: 8px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill-bar {
+  background-color: #006948;
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.stats-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  border-top: 1px solid #e4e2e1;
+  border-bottom: 1px solid #e4e2e1;
+  padding: 16px 0;
+  margin-bottom: 24px;
+}
+
+.metric-item strong {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: #1b1c1c;
+}
+
+.metric-item p {
+  font-size: 12px;
+  color: #5d5f5e;
+  margin: 4px 0 0 0;
+}
+
+.price-tier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f3f2;
+  padding: 12px 16px;
+  border-radius: 0.5rem;
+  margin-bottom: 20px;
+}
+
+.label-p { font-size: 14px; color: #5d5f5e; }
+.value-p { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: #1b1c1c; }
+
+.btn-pledge-action {
+  width: 100%;
+  background-color: #006948;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-pledge-action:hover { background-color: #00855d; }
+
+.guarantee-notice {
+  text-align: center;
+  font-size: 11px;
+  color: #5d5f5e;
+  margin: 12px 0 0 0;
+}
+
+/* 🍃 การจัดการการ์ดสิทธิประโยชน์สิ่งแวดล้อม */
+.sustainability-impact-card {
+  background-color: #f5fff7; /* แถบพื้นเขียวมรกตจาง 10% สะท้อนเรื่องความใส่ใจ */
+  border-radius: 1rem;
+  padding: 24px;
+  border: 1px solid #bccac0;
+}
+
+.impact-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #006948;
+  margin-bottom: 8px;
+}
+
+.impact-header h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.sustainability-impact-card h4 { font-size: 18px; color: #006948; margin: 0 0 8px 0; }
+.sustainability-impact-card p { font-size: 13px; color: #3d4a42; line-height: 1.4; margin: 0 0 16px 0; }
+
+.verified-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #006948;
+  background-color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid #bccac0;
+}

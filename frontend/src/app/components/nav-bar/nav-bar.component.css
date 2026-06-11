@@ -1,0 +1,47 @@
+/* --- 🛠️ ส่วนควบคุมแถบ Navbar ด้านบนสุดของตัวหน้าจอ --- */
+.main-navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e4e2e1;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.02);
+}
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand-logo {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.thread-text {
+  color: #000000;
+}
+.zero-text {
+  color: #006948;
+}
+.nav-menu a {
+  font-family: 'Inter', sans-serif;
+  margin: 0 16px;
+  text-decoration: none;
+  color: #1b1c1c;
+  font-weight: 500;
+}
+.nav-menu a.active-link {
+  color: #006948;
+  border-bottom: 2px solid #006948;
+  padding-bottom: 6px;
+}
+.btn-nav-action {
+  background-color: #006948;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 8px 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}

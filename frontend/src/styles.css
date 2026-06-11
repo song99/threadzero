@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+:root {
+  --primary: #006948; /* Emerald 600 */
+  --background: #fcf9f8; /* Stone 100 Canvas */
+  --surface: #ffffff; /* Pure White Card */
+  --font-main: 'Noto Sans', 'Inter', sans-serif; /* แฟมิลี่ฟอนต์ผสม */
+}
+
+body {
+  background-color: var(--background);
+  font-family: var(--font-main);
+  margin: 0;
+  color: #1b1c1c;
+}
+
+/* 📦 สไตล์ประยุกต์ใช้กล่องการ์ดและระยะ */
+.panel-card, .metric-card, .campaign-card {
+  background: var(--surface);
+  border-radius: 1rem; /* รัศมีความโค้งมน 16px สำหรับ Elements ใหญ่ */
+  padding: 24px; /* Internal padding 24px */
+  border: 1px solid #e4e2e1;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.05); /* Ambient shadow ผสมสีมรกต 5% */
+}
+
+.btn {
+  font-family: 'Inter', sans-serif;
+  border-radius: 0.5rem; /* ปุ่มและกล่องรับค่ามน 8px */
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
+
+/* Grid Layout Framework */
+.split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1200px; margin: 40px auto; padding: 0 24px; }
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; max-width: 1200px; margin: 24px auto; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; max-width: 1200px; margin: 30px auto; }
+
+/* Upload Render Styles */
+.upload-box { border: 2px dashed #bccac0; border-radius: 0.5rem; height: 180px; display: flex; justify-content: center; align-items: center; cursor: pointer; background: #fdfcfb; text-align: center; }
+.preview-render { max-height: 100%; max-width: 100%; object-fit: contain; }

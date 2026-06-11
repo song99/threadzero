@@ -1,0 +1,252 @@
+.landing-wrapper {
+  background-color: #fcf9f8; /* พื้นหลังสีสโตน 100 ตามระบบดีไซน์ */
+  min-height: 80vh;
+  padding-bottom: 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 🎯 จัดการหน้า Hero ให้อยู่กึ่งกลางและมีระยะช่องไฟ */
+.hero-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+.badge-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #006948; /* สีหลักมรกต */
+  background-color: rgba(0, 105, 72, 0.08); /* พื้นหลังจาง 8% */
+  padding: 6px 16px;
+  border-radius: 9999px; /* ทรงเม็ดยา */
+  margin-bottom: 24px;
+}
+
+.hero-content h1 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 48px; /* Headline-XL */
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1b1c1c;
+  margin: 0 0 24px 0;
+}
+
+.gradient-text {
+  color: #006948;
+}
+
+.hero-content p {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18px; /* Body-LG */
+  line-height: 1.6;
+  color: #5d5f5e;
+  margin: 0 0 40px 0;
+  max-width: 640px;
+}
+
+/* 🔘 กลุ่มปุ่มกดควบคุมทิศทาง */
+.cta-group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 0.5rem; /* ความมน 8px ตามมาตรฐาน */
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #006948;
+  color: #ffffff;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: #00855d;
+}
+
+.btn-secondary {
+  background-color: #e4e2e1;
+  color: #1b1c1c;
+}
+
+.btn-secondary:hover {
+  background-color: #dcd9d9;
+}
+
+/* 📦 จัดการส่วนหัวแคมเปญด้านล่าง */
+.campaigns-section {
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 0 24px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 28px;
+  color: #1b1c1c;
+  margin: 0 0 8px 0;
+}
+
+.section-header p {
+  font-family: 'Noto Sans', sans-serif;
+  color: #5d5f5e;
+  margin: 0;
+}
+
+/* 🖼️ Grid และกล่อง Card สินค้าดึงระยะจากคู่มือ Lush Precision */
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px; /* เว้นระยะห่างระหว่างการ์ด 24px */
+}
+
+.campaign-card {
+  background-color: #ffffff; /* กล่องการ์ดสีขาวบริสุทธิ์ */
+  border-radius: 1rem; /* ความมนขอบ 16px */
+  overflow: hidden;
+  border: 1px solid #e4e2e1;
+  box-shadow: 0 4px 20px -2px rgba(5, 150, 105, 0.05); /* เงาฟุ้งมรกต 5% */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: #f0eded;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.eco-chip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 0.25rem;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* เนื้อหาภายในการ์ดเว้นระยะWhitespaceกว้าง 24px */
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tag-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.spec-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #f5fff7;
+  color: #006948;
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.card-body h3 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #1b1c1c;
+  margin: 0 0 8px 0;
+}
+
+.desc-text {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #5d5f5e;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+  flex: 1;
+}
+
+/* 📊 แถบสเตตัสความคืบหน้า (Progress Bar แก้ไขปัญหายอดซ้อน) */
+.progress-container {
+  margin-bottom: 20px;
+}
+
+.progress-track {
+  background-color: #e4e2e1;
+  height: 6px;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  background-color: #006948;
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.raised-amount {
+  font-weight: 700;
+  color: #1b1c1c;
+  font-size: 15px;
+}
+
+.pct-badge {
+  font-weight: 600;
+  color: #006948;
+  font-size: 14px;
+}
+
+.btn-outline-card {
+  background-color: transparent;
+  border: 1px solid #006948;
+  color: #006948;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.btn-outline-card:hover {
+  background-color: #f5fff7;
+}
